@@ -49,8 +49,7 @@ public class RegisterPage {
 		}
 		eleUtil.doclick(checkBoxBtn);
 		eleUtil.doclick(continueButton);
-        String actSuccessmsg=eleUtil.waitForElementVisible(successMsg, Appconstants.MEDIUM_DEFAULT_TIME_OUT)
-        		.getText();
+        String actSuccessmsg=eleUtil.waitForElementVisible(successMsg, Appconstants.MEDIUM_DEFAULT_TIME_OUT).getText();
         System.out.println("user reg success msg============"+ actSuccessmsg);
          if(actSuccessmsg.contains(Appconstants.REGISTER_SUCCESS_MSG)) {
         	 return true;

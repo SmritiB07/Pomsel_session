@@ -6,6 +6,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +19,9 @@ public class WaitForAlert {
 	public static void main(String[] args) throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		ChromeOptions opt = new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(opt);
 
 		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
 

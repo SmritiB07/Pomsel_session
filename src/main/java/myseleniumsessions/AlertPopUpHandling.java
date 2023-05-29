@@ -16,7 +16,7 @@ public class AlertPopUpHandling {
 		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 //		driver.findElement(By.name("proceed")).click();
 //		Thread.sleep(5000);
-//    Alert alert=driver.switchTo().alert();//driver instance will switch to alert
+		// Alert alert=driver.switchTo().alert();//driver instance will switch to alert
 //		String text=alert.getText();
 //		System.out.println(text);
 		//alert.accept();
@@ -28,7 +28,7 @@ public class AlertPopUpHandling {
 //			String text=alert.getText();
 //			System.out.println(text);
 //             Thread.sleep(3000);
-//	         alert.accept();
+//	         alert.accept();/alert.dismiss();
 		//2. execute confirm alert
 //	 		driver.findElement(By.xpath("((//div[@id='content']//ul[@style='list-style-type: none;']//li)//button)[2]")).click();
 //	 		Thread.sleep(5000);
@@ -46,7 +46,7 @@ public class AlertPopUpHandling {
 			alert.sendKeys("sim");
              Thread.sleep(3000);
 	           alert.accept();
-		
+		alert.sendKeys("smriti");
 		
 		
 		

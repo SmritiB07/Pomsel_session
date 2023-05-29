@@ -19,10 +19,12 @@ public class ProdSearchTest extends BaseTest {
 		accPg=lp.doLogin(prop.getProperty("emaill"), prop.getProperty("pwd"));
 	}
 	 @DataProvider
-	    public Object[][] getProductInfoData() {
+	 public Object[][] getProductInfoData() {
 	    	return new Object[][] {
 	    		{"Macbook","MacBook",5},
-	    		{"Macbook","MacBook Air",4},{"samsung","Samsung SyncMaster 941BW",1},{"imac","iMac",3}
+	    		{"Macbook","MacBook Air",4},
+	    		{"samsung","Samsung SyncMaster 941BW",1},
+	    		{"imac","iMac",3}
 	    	};
 	    }
     

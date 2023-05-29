@@ -13,13 +13,9 @@ public class FrameHandleConcept {
 		WebDriver driver=new ChromeDriver(); 
 		driver.get("http://www.londonfreelance.org/courses/frames/index.html");
 		//driver.switchTo().frame(2);
-		//driver.switchTo().frame("main");
+		driver.switchTo().frame("main");
 ////frame[@name='content']
 		driver.switchTo().frame(driver.findElement(By.name("navbar")));
-		
-		
-		
-		
 		String header=driver.findElement(By.tagName("h3")).getText();
 		System.out.println(header);
 		

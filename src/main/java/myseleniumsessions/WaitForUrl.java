@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,7 +18,9 @@ public class WaitForUrl {
 	public static void main(String[] args) {
 
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		ChromeOptions opt= new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(opt);
 		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
 		driver.findElement(By.linkText("Register")).click();
 

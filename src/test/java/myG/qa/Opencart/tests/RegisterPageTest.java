@@ -42,6 +42,7 @@ public class RegisterPageTest extends BaseTest{
 	public Object[][]  getExcelData() {
 		Object[][] regData=ExcelUtil.getTestData(Appconstants.REGISTER_SHEET_NAME);
 		return regData;
+	
 	}
 	
 	@Test(dataProvider="getExcelData")
@@ -56,3 +57,22 @@ public class RegisterPageTest extends BaseTest{
 
 	
 }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

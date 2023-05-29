@@ -13,7 +13,7 @@ import io.qameta.allure.Story;
 import myG.qa.Opencart.Base.BaseTest;
 
 
-@Epic("Epic-100: Design the login page features for open cart application")
+@Epic("Epic- 100: Design the login page features for open cart application")
 @Story("US - 101: design loginn page features with login, forgot pwd, title, url")
 public class LoginPageTest extends BaseTest {
 

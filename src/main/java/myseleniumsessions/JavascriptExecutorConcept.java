@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
@@ -14,12 +15,14 @@ public class JavascriptExecutorConcept {
 	
 
 	public static void main(String[] args) throws InterruptedException {
+		ChromeOptions opt=new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*");
 		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
+		driver=new ChromeDriver(opt);
 		driver.get("https://www.swiggy.com/");
 		//browser--JS
-		//JavascriptExecutor js= ((JavascriptExecutor)driver);
-		//js.executeScript("return document.title;");-------return document.title;--this is javascript
+		JavascriptExecutor js= ((JavascriptExecutor)driver);
+		js.executeScript("return document.title;");//-------return document.title;--this is javascript
 		//return document.title;--this is javascript string, we need to convert this e
 		//js string into equivalent java string 
 //		String title=js.executeScript("return document.title;").toString();
@@ -32,11 +35,11 @@ public class JavascriptExecutorConcept {
 		String title=javasriptUtil.getTitleByJS();
 		System.out.println(title);
 		
-		//javasriptUtil.refreshBrowserByJS();//refreshes the application
+		javasriptUtil.refreshBrowserByJS();//refreshes the application
 		
 		//javasriptUtil.generateAlert("Welcome to myG world of Unique Gadgets");
 		//javasriptUtil.refreshBrowserByJS();
-//	String text=javasriptUtil.getPageInnerText();
+	String text=javasriptUtil.getPageInnerText();
 //	System.out.println(text);
 //	if(text.contains("call us")) {
 //		System.out.println("Pass-1");
@@ -56,16 +59,16 @@ public class JavascriptExecutorConcept {
 //		javasriptUtil.scroolPageUp();
 //		
      	//javasriptUtil.scroolPageDown();
-     	WebElement tag=driver.findElement(By.xpath("//div[@id='city-links']/h4"));
-     	javasriptUtil.scroolPageintoView(tag);
-		WebElement ele=driver.findElement(By.xpath("(//div[@id='city-links']//ul[@class='_1w9D3'])[1]//a[text()='bareilly']"));
+     	//WebElement tag=driver.findElement(By.xpath("//div[@id='city-links']/h4"));
+     	//javasriptUtil.scroolPageintoView(tag);
+		//WebElement ele=driver.findElement(By.xpath("(//div[@id='city-links']//ul[@class='_1w9D3'])[1]//a[text()='bareilly']"));
 		//javasriptUtil.scroolPageintoView(ele);
 		
-		Thread.sleep(2000);
-		javasriptUtil.clickElementByJS(ele);
+		//Thread.sleep(2000);
+		//javasriptUtil.clickElementByJS(ele);
 		
-		String title2=javasriptUtil.getTitleByJS();
-		System.out.println(title2);
+		//String title2=javasriptUtil.getTitleByJS();
+		//System.out.println(title2);
 		
 		
 		

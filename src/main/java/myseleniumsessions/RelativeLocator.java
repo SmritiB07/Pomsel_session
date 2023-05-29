@@ -1,6 +1,8 @@
 package myseleniumsessions;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -29,7 +31,10 @@ public class RelativeLocator {
     @Test(description="Test Book5 is left of Book6 and Below Book1")
     public void test1() 
     {
-    //driver.findElement(RelativeLocator.withTagName("li").toLeftof(By.id("pid6")).below(By.id("pid1")));	
+    	//String rightIndex = driver.findElement(with(By.tagName("p")).toRightOf(baseEle)).getText();
+	//	System.out.println(rightIndex);	
+   driver.findElement(with(By.tagName
+    		("li")).toLeftOf(By.id("pid6")).below(By.id("pid1")));	
     }
     
     
